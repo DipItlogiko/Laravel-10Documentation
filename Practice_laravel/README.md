@@ -31,9 +31,7 @@
 
    **8.** Response Generate korar por shei Response take aabar public/index.php te send kora hoy. tar por shei ta Web Server(apache,inginx) hoye User a kache pouchai.
 
-   ***NOTE**:
-
-    amader akta laravel application ar sob Request ashe public/index.php  te  abar sob Response send kore ooo public/index.php 
+   ***NOTE*** :  amader akta laravel application ar sob Request ashe public/index.php  te  abar sob Response send kore ooo public/index.php 
 
    ***Image***: 
 

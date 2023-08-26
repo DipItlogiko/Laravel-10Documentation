@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    dd(app());
+    //dd(app()->make('test_time')); //// add kora service take retrait korar jonno make() bebohar kora hoy...test_time it's comes from RiakServiceProvider.php
 });

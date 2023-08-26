@@ -11,7 +11,7 @@
 |
 */
 
-$app = new Illuminate\Foundation\Application(
+$app = new Illuminate\Foundation\Application( /////akhane amar hole laravel application ar akta instance create kora hoyeche.akhon amar hole laravel application mane $app
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 

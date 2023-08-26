@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    dd(app());
     return view('welcome');
 });
+
+
+Route::get('/testServiceContainer', function () {
+   app()->make('First_Service_Helper');
+});
+

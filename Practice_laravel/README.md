@@ -56,9 +56,7 @@ Container ki?
 
 * Container bolte bojhai jemon amar bookself .jekhane amar laravel service gulo inject hoye thake 
 
-## Another topic
 
-* Jodi amra kono custom route file create kori routes derectory ar moddhe tahole obossoi amake app/Providers ar moddhe RouteServiceProvider.php ar moddhe bole dite hobe. 
 
 
 

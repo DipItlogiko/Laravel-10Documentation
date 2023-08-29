@@ -424,6 +424,9 @@ use App\Models\Post;
 ///// Defining Rate Limiters------------------
 /////(ami app/Providers ar moddhe RouteServiceProvider.php ar moddhe akta notun RateLimiter create korechi jar nam custom_limit)
 ////(throttle method ta find korbe amader RouteServiceProvider.php boot() function ar moddhe je amader custom_limit name kono RateLimit ache ki na jodi thake tahole she oi kaj ta korbe)
+////(throttle:5,1 ai vabe ooo amra throttle likhte pari 5 mane hocche 5ta request amader server accept korbe 1 miniutes ar moddhe. 5 ta ar beshi kew request korle error dekhabe) 
+////(throttle ta  amader laravel application ar moddhe app/Http kernel.php ar moddhe bydefault vabe thake)
+///(throttle  request ta handel kore)
 
 // Route::get('/data',function() {
 //     return 'hi';

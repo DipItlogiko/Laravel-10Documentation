@@ -64,6 +64,13 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'dipgard' => \App\Http\Middleware\EnsureTokenIsValid::class,
+        'ensure.token' => \App\Http\Middleware\EnsureTokenIsValid::class,
+        'before.check'=> \App\Http\Middleware\BeforeMiddleware::class, ////// go with the path 
+        'after.check'=> \App\Http\Middleware\AfterMiddleware::class,////// go with the path
+        'role'=> \App\Http\Middleware\EnsureUserHasRole::class,
+        'terminable'=> \App\Http\Middleware\terminableMiddleware::class,
     ];
+
+
+    
 }

@@ -15,10 +15,10 @@ class EnsureTokenIsValid
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->input('token') !== 'my-secret-token'){
+        if ($request->input('token') !== 'my-secret-token'){ ////// akhane amader jodi $request->input('token') and 'my-secret-token' jodi soman na hoy tahole hobe a rederect korbe
             
-            return redirect('home');
+            return redirect('home');////// home ta hocche amar route ar url 
         }
-        return $next($request);
+        return $next($request); /////// jodi $request->input('token') and 'my-secret-token' soman hoy tahole next request a jabe 
     }
 }

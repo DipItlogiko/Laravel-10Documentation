@@ -370,22 +370,22 @@ use App\Models\Post;
 
 ///////// Custom Keys & Scoping-----------------------------------
  
-// Route::get('/users/{user}/posts/{post:slug}', function (User $user, Post $post) {
-//     return $post;
+// Route::get('/users/{user:email}', function (User $user) {
+//     return $user;
 // });
-
+ 
 
 //////// Customizing Missing Model Behavior-----------------------
 ///////(jokhon arma route model binding kori tokon amar model ar moddhe data na thakle ooo bydefault akta 404 error show kore..amra jodi ai behebiou ta change kore chai tahole aivabe korte pari)
 
-// Route::get('/redirect',function(){
-//     return 'you are redirected';
-// })->name('locations.index');        
+// Route::get('/',function(){
+//     return view('welcome');
+// })->name('welcome');        
 
-// Route::get('/locations/{id}', [UserController::class, 'CMMB'])
-//         ->name('locations.view')
-//         ->missing(function () {
-//             return redirect()->route('locations.index');
+// Route::get('/users/{id}', [UserController::class, 'CMMB'])
+//          ->name('form') 
+//         ->missing(function (User $user) {
+//             return redirect()->route('welcome');
 //         });
 
 
@@ -401,12 +401,14 @@ use App\Models\Post;
 /////// Explicit Binding------------------------
 //////(for this i have added Route::model('user',User::class); in RouteServiceProvider.php which is located in app/Providers)
 
-// Route::get('/users/{user}', function (User $user) {
-//     return $user;
-// });
+Route::get('/users/{user:id}', function (User $user) {
+    return $user;
+});
 
 
 /////// Customizing The Resolution Logic------------
+
+
 
 
 

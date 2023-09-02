@@ -49,10 +49,11 @@ class UserController extends Controller
     }
 
 
-    Public function CMMB(Post $post)
+    Public function CMMB(User $user)
     {
-        return $post;
+        return view('form');
     }
 
+    
  
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserController2;
 use App\Http\Controllers\UserController3;
+use App\Http\Controllers\UserController4;
 use App\Http\Controllers\DipInvocableController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\PhotosController2;
@@ -144,6 +145,90 @@ use Illuminate\Support\Facades\Redirect;
 // ]);
 
 
-Route::resource('photos', PhotoController::class)->except([
-    'create', 'store', 'update', 'destroy'
-]);
+// Route::resource('photos', MovieResourceController::class)->except([ ///// akhane ami bole dicchi amar MovieResourceController ar moddhe je mehod gulo ache ta theke expect() ar moddhe jei method ache ai gulo ke she bad diye debe mane MovieResourceController ta ai method gulor moddhe apply hobe na
+//     'create', 'store', 'update', 'destroy'
+// ]);
+
+
+////////////// API Resource Routes---------------
+/////////(Check README.md)
+///////(for this i have created a new controller which name is ApiResourceController)
+///////(check routes/api.php)
+
+
+
+////////////////////// Nested Resources-------------------------------------------------------------------------
+//////(check READEME.md)
+
+//Route::resource('photos.comments', MovieResourceController::class); ////// ai resource ta ai vabe kaj korche /photos/{photo}/comments/{comment}
+
+
+////////////// Shallow Nesting------------
+//////(check READEME.md)
+
+//Route::resource('photos.comments', MovieResourceController::class)->shallow();
+
+ 
+/////////////// Naming Resource Route Parameters-------------------------------------------------------------------
+
+// Route::resource('users', MovieResourceController::class)->parameters([ //// akhane amra user ar paramiter change kore diyechi bydefault ja thake tar theke. now it's look like /users/{admin_user}
+//     'users' => 'admin_user'
+// ]);
+
+
+/////////////// Scoping Resource Routes----------------------------------------------------------------
+
+// Route::resource('photos.comments', MovieResourceController::class)->scoped([ ///// it looks like  /photos/{photo}/comments/{comment:slug}
+//     'comment' => 'slug',
+// ]);
+
+
+////////////////// Localizing Resource URIs--------------------------------------------------------
+////////(for execute this below code you have to uncomment some code from RouteServiceProvider )
+
+//Route::resource('photos', MovieResourceController::class); /////akhaner bydefault url ta amra customize korechi RouteServiceProvider ar  moddhe  . akhon ami jodi /photos/ar por MovieResourceController ar kono method ar nam diye url a hit kori tahole kono kaj hobe na.jodi ami amar RouteServiceProvider a giye jei nam diye set korechi oi nam diye browser a hit kori tahole kaj korbe jemon /photos/ diye   hit kore kaj korbe /photos/crear dile kaj korbe kintu /photos/create dile kaj korbe na karon ami amr RouteServiceProvider ar moddhe set kore diyechi.edit ke access korte hole likhte hobe /photos/1/editar karon edit ke amra editar name set korechi aikhane edit dile kaj hobe na    
+
+
+
+////////////////// Supplementing Resource Controllers-----------------------------------------------
+
+// Route::get('/photos/popular', [MovieResourceController::class, 'popular']);
+// Route::resource('photos', MovieResourceController::class); ////// amra resource Route a jei route name dibo oi name diye jodi r kono route ar nam suru hoy tahole amra oi route ke resource route ar opore likhbo jodi amra oi route take resource route ar niche likhi tahole resource route ta oi route take ooo tar awtai niye nei  
+
+
+//Route::get('/photos/popular', [MovieResourceController::class, 'popular']);
+
+
+////////////////// Singleton Resource Controllers------------------------------------------------------
+////////(CHECK READEME.md)
+
+//Route::singleton('profile', MovieResourceController::class);
+
+///////// OR-------------------------------
+
+// Route::singleton('photos.thumbnail', MovieResourceController::class);
+
+
+////////////////// Creatable Singleton Resources------------------------------------------------------
+////////(CHECK READEME.md)
+
+//Route::singleton('photos.thumbnail', MovieResourceController::class);
+
+
+////////////////// API Singleton Resources------------------------------------------------------------
+////////(go to routes/api.php)
+
+
+/////////////////////// Dependency Injection & Controllers---------------------------------------------------------------
+////////(CHECK READEME.md)
+///////(for this practice i have written code into the UserController4 and i also created Repositories directory and create a new file in that directory the file name is UserRepository.php)
+
+
+// Route::get('/users', [UserController4::class, 'index']);
+
+
+
+////////////////////// OR-------------------------------
+
+Route::get('/user/{id}', [UserController4::class, 'update']);
+

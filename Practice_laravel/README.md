@@ -97,3 +97,86 @@ jokhon amra amader resource controller create korbo model shoho tokhon tar shesh
 ## Partial Resource Routes
 
  chack Routes/web.php
+
+
+## API Resource Routes
+
+When you define routes for resources that will be used by APIs, you often don't want to include routes that show HTML templates like 'create' and 'edit' pages. To make things easier, you can use the 'apiResource' method, which will automatically remove these two routes for you.
+
+jokhon amra api resource controller create korbo tokhon oi controller ar moddhe 2 ta method create hoy na akta hocce create method and r akta hocche edit method 
+
+* For creating a new api resource controller
+
+      php artisan make:controller PhotoController --api
+
+
+##  Nested Resources
+
+  nested resources amra tokhon eee bebohar korbo jokhon dhoren একটি ফটো রিসোর্স আছে যেটির মাধ্যমে একটি ফটোর সাথে একাধিক মন্তব্য সংযুক্ত হতে পারে। রিসোর্স কন্ট্রোলারগুলি নেস্ট করতে, আপনি আপনার রুট ঘোষণায় . নোটেশন ব্যবহার করতে পারেন।
+
+
+  for example:
+
+       Route::resource('photos.comments', PhotoCommentController::class);
+
+  akhane photos resource a moddhe . diye comments resource ke nested kore diyechi photos resource ar moddhe    
+
+## Shallow Nesting
+
+সাধারণভাবে, প্যারেন্ট এবং চাইল্ড আইডি দুটি ইউআরআইর মধ্যে থাকা দরকার নেই, কারণ চাইল্ড আইডি ইতিমধ্যে একটি ইউনিক আইডেন্টিফায়ার হয়ে থাকে। আপনি আপনার মডেলগুলির ইউআরআই সেগমেন্টে মডেলগুলি চিহ্নিত করতে অটো-ইনক্রিমেন্টিং প্রাইমারি কি মতো ইউনিক আইডেন্টিফায়ার ব্যবহার করতে গিয়ে "শ্যালো নেস্টিং" ব্যবহার করতে পারেন  
+
+
+## Naming Resource Routes
+
+[Link](https://laravel.com/docs/10.x/controllers#restful-naming-resource-routes)
+
+## Naming Resource Route Parameters
+
+amra naming resource route ar parameters set kore dite pari ar maddhome (Chack routes/web.php)
+
+## Scoping Resource Routes
+
+যখন আপনি এই ফিচারটি ব্যবহার করেন, তখন লারাভেল নিশ্চিত করতে সক্ষম হয় যে একটি চাইল্ড মডেলটি প্যারেন্ট মডেলের অংশীদার হবে এবং এটি স্বয়ংক্রিয়ভাবে স্কোপ করা যাবে, যাতে আপনি স্পষ্টভাবে বলতে পারেন চাইল্ড রিসোর্সটি কোন ফিল্ড দ্বারা পুনরায় পেতে হবে। এটি আপনার এপ্লিকেশনে ডেটা সার্বক্ষণিকভাবে যে ডাটা কোন প্যারেন্ট মডেলে সংশ্লিষ্ট তা নিশ্চিত করে এবং সহজে ডাটা এক্সেস করতে সাহায্য করে।
+
+
+## Localizing Resource URIs
+
+ডিফল্ট ভাবে, Route::resource ইংরেজি ক্রিয়াপদ এবং বহুবচনের নিয়ম ব্যবহার করে রিসোর্স URI তৈরি করবে। যদি আপনি সৃজন এবং সম্পাদনা ক্রিয়াপদগুলির ভাষান্তর করতে চান, তবে আপনি Route::resourceVerbs মেথড ব্যবহার করতে পারেন। এটি আপনার অ্যাপ্লিকেশনের App\Providers\RouteServiceProvider এর boot মেথডের আদি অংশে করা যেতে পারে
+
+## Supplementing Resource Controllers
+
+Chack routes/web.php
+
+## Singleton Resource Controllers
+
+[Link](https://laravel.com/docs/10.x/controllers#singleton-resource-controllers)
+
+কখনওকি, আপনার অ্যাপ্লিকেশনে সংস্থান থাকতে পারে যা শুধু একটি ইনস্ট্যান্স রাখতে পারে। উদাহরণস্বরূপ, একটি ব্যবহারকারীর "প্রোফাইল" সম্পাদনা বা আপডেট করা যেতে পারে, কিন্তু একটি ব্যবহারকারীর একাধিক "প্রোফাইল" থাকতে পারে না। একইভাবে, একটি ইমেজের একটি "থাম্বনেইল" থাকতে পারে। এই ধরনের সম্পদগুলি "সিঙ্গলটন সম্পদ" বলে চিহ্নিত, অর্থাৎ এই সম্পদের একটি এবং শুধুমাত্র একটি ইনস্ট্যান্স থাকতে পারে। এই ধরনের স্থানাঙ্ক সম্পদের জন্য, আপনি একটি "সিঙ্গলটন" সম্পদ কন্ট্রোলার নিবন্ধন করতে পারেন।
+
+Sometimes, your application will have resources that may only have a single instance. For example, a user's "profile" can be edited or updated, but a user may not have more than one "profile". Likewise, an image may have a single "thumbnail". These resources are called "singleton resources", meaning one and only one instance of the resource may exist. 
+
+## Creatable Singleton Resources
+
+[link](https://laravel.com/docs/10.x/controllers#creatable-singleton-resources)
+
+অর্থাৎ, যখন আপনি এই সিঙ্গলটন সম্পদ রুট নিবন্ধন করতে চান এবং সংরক্ষণ এবং সৃষ্টি রুট সংজ্ঞা করতে চান তখন আপনি এই ক্রিয়াশীল মেথড ইনভোক করতে পারেন।
+
+In other words, occasionally, you might need to set up routes for creating and storing data for a resource that should have only one instance. To do this, you can use the creatable method while defining the routes for that singleton resource.
+
+## API Singleton Resources
+
+apiSingleton মেথড ব্যবহার করা যেতে পারে একটি singleton resource নিবন্ধন করার জন্য যা একটি API দ্বারা পরিচালিত হবে, অর্থাৎ create এবং edit রুটগুলি প্রয়োজন না করে।
+
+## Dependency Injection & Controllers
+
+* Constructor Injection
+  
+  লারাভেল service container সব লারাভেল controllerগুলি resolve করতে ব্যবহৃত হয়। ফলস্বরূপ, আপনি আপনার controller aa কোনও ডিপেন্ডেন্সিগুলির জন্য যে কোন ডিপেন্ডেন্সিগুলি আপনার কন্ট্রোলারের কনস্ট্রাক্টরে টাইপ-হিন্ট করতে পারেন। ঘোষিত ডিপেন্ডেন্সিগুলি স্বয়ংক্রিয়ভাবে সমাধান করা এবং controller ইনস্ট্যান্সে ইনজেক্ট করা হবে।
+
+## i am not clear about belows topics:
+
+* Shallow Nesting
+* Scoping Resource Routes
+* Creatable Singleton Resources
+* API Singleton Resources
+* Dependency Injection & Controllers(i have executed all codes of this section but first two parts i don't understand how it works)

@@ -4,22 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MovieResourceController extends Controller
+class ApiResourceController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return 'index';
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-       return 'create method from MovieResourceController';
+        return 'index method from ApiResourceController';
     }
 
     /**
@@ -35,23 +27,15 @@ class MovieResourceController extends Controller
      */
     public function show()
     {
-        return 'show';
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit()
-    {
-        return 'edit method from MovieResourceController';
+        return 'show method from ApiResourceController';
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update()
+    public function update(Request $request, string $id)
     {
-        return 'update method from MovieResourceController';
+        //
     }
 
     /**
@@ -60,10 +44,5 @@ class MovieResourceController extends Controller
     public function destroy(string $id)
     {
         //
-    }
-
-    public function popular()
-    {
-        return 'popular';
     }
 }

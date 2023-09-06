@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return [1, 2, 3];
+});
+
+
+
+///////////////////// Response Objects---------------------
+
+Route::get('/home', function () {
+    return response('Hello World', 200)
+                  ->header('Content-Type', 'text/plain');
+});
+
+
+////////////////// Eloquent Models & Collections
+
+Route::get('/users/{user}', function (User $user) {
+    return $user;
 });

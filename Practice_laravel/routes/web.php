@@ -30,6 +30,10 @@ Route::get('/home', function () {
 
 ////////////////// Eloquent Models & Collections
 
-Route::get('/users/{user}', function (User $user) {
+Route::get('/users/{user}', function (User $user) { ////// akhane /users/id number diye hit korle oi user ar sob data show korbe
     return $user;
 });
+
+
+//////////////// Attaching Headers To Responses--------------------
+

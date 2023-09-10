@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello, {{ $name }}</h1>   
-    <h1>The current UNIX timestamp is {{ time() }}</h1>   
-        
+    <p>This is an example of HTML entity encoding: &lt;div&gt;Hello, World!&lt;/div&gt;</p>
 </body>
-</html> 
+</html>

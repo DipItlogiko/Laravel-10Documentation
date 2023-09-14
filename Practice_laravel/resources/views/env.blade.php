@@ -29,7 +29,7 @@
 
 <!--OR---->
    
-    @if(@env(['local', 'production'])) <!--Akhane env() chack korbe amar .env file theke APP_ENV= te ki ache jodi local ba production ai 2 tar moddhe je kono akta pailei ooo true return korbe and ar moddhe thaka element print korbe...  jodi ai 2ta bade oono kichu thake APP_ENV= ar moddhe tahole aita false return korbe and ar moddhe thaka kichu print korbe na----->
+    @if(@env('local', 'production')) <!--Akhane env() chack korbe amar .env file theke APP_ENV= te ki ache jodi local ba production ai 2 tar moddhe je kono akta pailei ooo true return korbe and ar moddhe thaka element print korbe...  jodi ai 2ta bade oono kichu thake APP_ENV= ar moddhe tahole aita false return korbe and ar moddhe thaka kichu print korbe na----->
       <h1>your current environment is local or production</h1>
     @else <!--jodi oporer 'local','production' ai 2ta .env ar moddhe APP_ENV= aikhane na thake tahole ooo false return korbe and else a chole ashbe and else ar moddhe ja thakbe tai print korbe----->
        <h1>your current environment is not local or production</h1>

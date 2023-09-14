@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IfStatementController;
+use App\Http\Controllers\CheckController;
 
 /*
 |--------------------------------------------------------------------------
@@ -108,4 +109,123 @@ Route::get('/demo',function () {
 
 Route::get('/env',function () {
     return view('env');
+});
+
+//////////////// Section Directives--------------------------
+///////(Check READEME.md)
+/////// (@hasSection())
+
+Route::get('/section',function(){
+    return view('section');
+});
+
+
+//////(@sectionMissing())
+
+Route::get('/hasSection',function(){
+    return view('hasSection');
+});
+
+
+//////////////// Switch Statements-----------------------------
+
+Route::get('/switch',function(){
+    $status ='Pending'; 
+    //return view('switch',['status' =>$status]);
+    //or
+    //return view('switch',compact('status'));
+    //or
+    return view('switch')->with('status',$status);
+});
+
+
+////////////// Loops--------------------------------------------
+
+Route::get('/loop',function(){
+    $students =['dip','dibbo','rahul','rija'];
+    $users = ['one' =>'Pranto', 'two' =>'Shanto', 'three' =>'Bappa'];
+    return view('loop',['students' => $students , 'users' => $users]);
+});
+
+
+////////////// (@continue and @break)-------------------
+
+Route::get('/ContinueAndBreak',function(){
+    $students =['dip','dibbo','rahul','rija','jon','david','rose'];     
+    return view('ContinueAndBreak',['students' => $students]);
+});
+
+
+//////////// Conditional Classes & Styles--------------------------
+////////(@class blade directive)
+///////(chack READEME.md)
+
+Route::get('/class',function(){
+    return view('class');
+});
+
+
+//////////(@style blade directive)
+
+Route::get('/style',function(){
+    return view('style');
+});
+
+
+//////////// Additional Attributes---------------------------------
+
+Route::get('/check/{userId}', [CheckController::class,'showUser']);
+
+
+////////////// Including Subviews----------------------------------
+//////(chack READEME.md)
+
+
+
+//////////// Rendering Views For Collections-------------------------
+//////(chack READEME.md)
+/////( @each() blade directive )
+
+Route::get('/each',function(){
+    $jobs=['airline','railway','navay','bank','college','school'];
+    //return view('each',compact('jobs'));
+    //OR
+    //return view('each',['jobs' => $jobs]);
+    //OR
+    return view('each')->with('jobs',$jobs);
+
+});
+
+
+
+///////////// The @once Directive-------------------------------------
+//////(chack READEME.md)
+
+Route::get('/once',function(){
+    return view('once');
+});
+
+
+//////@pushOnce() blade directive--
+//////(chack READEME.md @once())
+
+Route::get('/pushOnce',function(){
+    return view('pushOnce');
+});
+
+
+//////////////// Components-------------------------------------------
+////////(chack READEME.md)
+////(for this practice i have created a class component which name is input )
+
+Route::get('/component',function(){
+    return view('form');
+});
+
+
+//////////////// Manually Registering Package Components--------------------------
+////////(for this practice i have created a new class based component which name is Input which is located into the app/view/components/Form/Input.blade.php and resources/views/components/form/input.blade.php and i also created a new provider into the app/proviers which name is PackagesServiceProvider)
+
+Route::get('/packageComponent',function(){
+    return view('PackageComponent');
 });

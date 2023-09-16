@@ -10,19 +10,18 @@ class input extends Component
 {
     public $type;
     public $name;
-    public $label;     
-    public $message;
+    public $label;   
+    public $demo;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($type, $name, $label, $message ='empty')
+    public function __construct($type, $name, $label ,$demo = 0 )
     {
         $this->type = $type; // akhan theke argument gulo autometically amader class component ar blade file a chole jabe resources/views/components/input.blade.php
         $this->name = $name;
-        $this->label = $label;
-        $this->value = $value; 
-        $this->message = $message;
+        $this->label = $label;        
+        $this->demo = $demo;
     }
 
     /**
@@ -31,5 +30,11 @@ class input extends Component
     public function render(): View|Closure|string
     {
         return view('components.input');
+    }
+
+    ////__Component Methods__////
+
+    public function addNumber($a){
+        return $a + 20;
     }
 }

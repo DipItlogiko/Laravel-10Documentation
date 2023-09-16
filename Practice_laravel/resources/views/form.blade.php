@@ -12,15 +12,15 @@
   </head>
   <body>
     @php
-      $message = 'Hello';
+      $demo = 1;
     @endphp
 
     <div class="container">
         <form action="" method="">
             @csrf
-            <x-input type="text" name="name" label="Name" value="{{ old('name') }}" :message="$message" /> <!--ami je class component ta create korechi input name oi input class component take akhane render korchi render korar jonno amake prothom a </> tag likhte hobe jar nam user define tag  and sobsomoy component ar nam unique rakhte hobe and x- represent kore component ke amra tai x- diye amader input component ar nam bole diyechi and tarpor ami kichu argument pass korechi jemon type,name,label and ai argument gulo amader component porjonto pouchanor jonno amader jete hobe app/View/components/input.php and ai argument guloke contructor method ar moddhe define kore dite hobe....jodi amra kono variable ke class based component ar agrument hishebe pass korte hole amader age : diye tar por key ar nam likhte hobe then = "" string ar moddhe variable ar nam ta bole dite hobe with $ simble------->
-            <x-input type="email" name="email" label="Email" value="{{ old('email') }}" :message="$message" /> 
-            <x-input type="number" name="number" label="number" value="{{ old('number') }}" :message="$message"/>
+            <x-input type="text" name="name" label="Name" :demo="$demo" /> <!--ami je class component ta create korechi input name oi input class component take akhane render korchi render korar jonno amake prothom a </> tag likhte hobe jar nam user define tag  and sobsomoy component ar nam unique rakhte hobe and x- represent kore component ke amra tai x- diye amader input component ar nam bole diyechi and tarpor ami kichu argument pass korechi jemon type,name,label and ai argument gulo amader component porjonto pouchanor jonno amader jete hobe app/View/components/input.php and ai argument guloke contructor method ar moddhe define kore dite hobe....jodi amra kono variable ke class based component ar agrument hishebe pass korte hole amader age : diye tar por key ar nam likhte hobe then = "" string ar moddhe variable ar nam ta bole dite hobe with $ simble------->
+            <x-input type="email" name="email" label="Email" :demo="$demo"  /> 
+            <x-input type="number" name="number" label="number" :demo="$demo" />
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

@@ -322,20 +322,232 @@ The @class directive conditionally compiles a CSS class string. The directive ac
 
         ai command ta chalale Forms name akta directory create hobe and oi directory ar moddhe Input name akta component create hoye jabe  app/View/Components/Forms  and resources/views/components/forms
 
-      To create an anonymous component(a component with only a Blade template and no class) , you may use the make:component Artisan command. 
+      To create an anonymous component(ai component ta create hoy shudhu akta blade view file niye ai component ar kono class thake na) , you may use the make:component Artisan command.([link](https://www.youtube.com/watch?v=tirPOL3o5rM)) 
 
             php artisan make:component forms.input --view
 
-        The command above will create a Blade file at resources/views/components/forms/input.blade.php which can be rendered as a component via <x-forms.input />.    
+        The command above will create a Blade file at resources/views/components/forms/input.blade.php which can be rendered as a component via ```<x-forms.input />```     
 
-        NOTE: x- (component ke represent kore) 
+        NOTE: x- (component ke represent kore) and anonymous component ke call kore kono argument pass korle ta component class a likhte hoy na karon anonymous component ar kono component class hoy na. amra anonymous component call kore kono artument pass korle amra sora sori oi argument ar nam ta amader anonymous component ar moddhe $ diye tar por argument ar nam diye sora sori use korte pari.
 
-## Rendering Components([link](https://laravel.com/docs/10.x/blade#rendering-components))        
+## Rendering Components([link](https://laravel.com/docs/10.x/blade#rendering-components))   
+
+amra sob somoy component ke render korar somoy ba call korar somoy resources/views/components ar moddhe amader component ta je name create hoy thik oi nam  ta diye call korte hobe jemon ```<x-input />```
+
+ooonek khetre amra ```<x-input-form />``` ai rokom vabe oo call kora dekhte pari component ke (input-form) ar mane ai component ar alias create kora hoyeche (check routes/web.php Manually Registering Package Components)
+
+
+## Passing Data To Components([link](https://laravel.com/docs/10.x/blade#passing-data-to-components))
+
+## Casing([link](https://laravel.com/docs/10.x/blade#casing))
+
+ ![image](./Screenshot%20from%202023-09-14%2016-19-46.jpg)
+
+
+*  jodi amra class based component ar moddhe eemon kono argument pass kori jeitar 2ta word tahole amra red mark kora ai indentasion aaa likhbo jemon (alert-type) ai indentation ke bole kebab-case
+
+* kebab-case aaa argument pass korle oi agrument ta ke component class (app/View/components) ar moddhe  a camelCase indentation aaa likhte hobe jemon (alertType)...green mark kora
 
 
 
 
+## Short Attribute Syntax([link](https://laravel.com/docs/10.x/blade#short-attribute-syntax))
 
+ ![image](./Screenshot%20from%202023-09-14%2013-10-42.jpg)
+
+  * amra muloto jokhon kono class based component a variable pass kori tokhon red mark kora ai vabe likhi variable pass korte hole : diye akta attribute ar nam tar por = 'variable_ar_nam' ai vabe pass korte hoy
+
+  * kintu amra oporer kaj ta r oo sohoje korte pari Short attribute syntax... ar maddhome jemon akhane green color diye mark kora....amra akhane x- ar por class based component ar nam likhi jeita resources/views/component ar moddhe je name file create hoy oi nam ta aikhane likhi tarpor tar por amra variable pass korar jonno : diye sorasori variable ar nam diye pass kore dite pari
+
+## Escaping Attribute Rendering([link](https://laravel.com/docs/10.x/blade#escaping-attribute-rendering))  
+
+
+
+## Component Methods
+ 
+  amra class based component ar class ar moddhe mane(app/View/components) ar moddhe Component Mehods likhte pari(go to routes/web.php)
+
+
+## Hiding Attributes / Methods
+
+![image](./Screenshot%20from%202023-09-15%2017-46-23.jpg)
+
+ jokhon amra kono class based component ke call kore oi component ar moddhe kono argument pass korbo jemon ```<x-input type="text" />``` tokhon ami chaile ai type attributes ba methods take hide kore dite pari amar component ar class ar moddhe giye (app/view/component) $expect array ar moddhe oi attribute name bole dile expect oi method ta bad diye debe ba hide kore debe mane ooo oi attribute ta ke chalabe na
+
+  
+
+## Component Attributes
+
+   class based component ke call kore amra jokhon argument pass kori tokhon oi argument ba attribute ke amader component class(app/view/component) ar moddhe constructor method ar moddhe likhe dite hoy...kintu amra jei argument ba attribute pass kori kintu constructor method aaar moddhe likhi na oi argument ba attribute gulo amra ai  $attributes variable aitake(attribute bag ooo bole) ar moddhe pai.(go to routes/web.php)
+
+
+## Default / Merged Attributes([Document](https://laravel.com/docs/10.x/blade#default-merged-attributes))
+
+
+##  Default / Merged Attributes([Document](https://laravel.com/docs/10.x/blade#default-merged-attributes))|([tutorial(5:16)](https://www.youtube.com/watch?v=1P15O6AfWEQ))
+
+ marge ar maddhome amra kono attribute ba argument ar default value set kore dite pari jodi kew oi argument ba attribute ar value pass na kore component render ba call korar por tahole oi attribute ba agrument ar value ja set kora thakbe marge ar modhe oo oitai render korbe ...and jodi kew component ar moddhe oi argument ta pass kore tahole marge amader pass kora value ta marge kore debe default ar sathe mane tokhon r default value dekhabe na amra ja pass korechi tai eee dekhabe....
+
+
+## Non-Class Attribute Merging([Document](https://laravel.com/docs/10.x/blade#non-class-attribute-merging))
+
+   
+## Retrieving & Filtering Attributes([Document](https://laravel.com/docs/10.x/blade#filtering-attributes))
+
+You may filter attributes using the filter method. This method accepts a closure which should return true if you wish to retain the attribute in the attribute bag.(check routes/web.php)
+
+
+## Reserved Keywords
+
+  ব্লেডের আভ্যন্তরীণ ব্যবহারের জন্য ডিফল্টভাবে কিছু কীওয়ার্ড সংরক্ষিত রয়েছে, তা করে কোম্পোনেন্ট রেন্ডার করার জন্য। নিম্নলিখিত কীওয়ার্ডগুলি আপনি নিজের কোম্পোনেন্টের পাবলিক প্রোপার্টি বা মেথডের নাম হিসেবে সংজ্ঞা দিতে পারবেন না:
+
+  **keywords gulo holo:**
+
+   * data
+   * render
+   * resolveView
+   * shouldRender
+   * view
+   * withAttributes
+   * withName 
+
+
+## Slots
+
+  Slots hocche component ar eeeee akta part.
+
+
+  Slots ar maddhome amra additional content pass korte pari.amra jokhon kono component ke render kori ba call kori jemon ```<x-input />``` jodi amra solt pass korte chai tahole aivabe component call korte hobe
+  
+   ```<x-inpu>```
+
+   akhane ja likhbo ta input component(resources/view/component) ar moddhe amra $slot variable ar maddhome access korte parbo
+  
+  ```</x-input>```  (check routes/web.php)      
+
+
+
+## Scoped Slots ([Document](https://laravel.com/docs/10.x/blade#scoped-slots)) 
+
+
+## Slot Attributes ([Document](https://laravel.com/docs/10.x/blade#slot-attributes))
+
+
+## Inline Component Views([Document](https://laravel.com/docs/10.x/blade#inline-component-views))
+
+ * Generating Inline View Components
+
+   To create a component that renders an inline view, you may use the inline option when executing the make:component command:
+
+       php artisan make:component component_ar_nam --inline
+
+    jemon:
+
+      php artisan make:component Alert --inline
+
+    NOTE: ai inline component create korar por amader shudhu akta class file create hoy (app/view/components) ar  moddhe and jokhon amra amader ai inline component take kono blade file aa render ba call korbo tokhon oi class file ta jei name create hoyeche oi name call ba render korbo. (check routes/web.php)
+ 
+
+ 
+## Dynamic Components([Document](https://laravel.com/docs/10.x/blade#dynamic-components))
+
+
+
+## Anonymous Index Components([Document](https://laravel.com/docs/10.x/blade#anonymous-index-components))
+
+
+## Data Properties / Attributes([Document](https://laravel.com/docs/10.x/blade#data-properties-attributes))
+
+ amra @props array ar moddhe jei key ar nam diye debo $attributes variable ba attribute bag oi argument ba attributes gulo ke ignore korbe  ([tutorial(9:26)](https://www.youtube.com/watch?v=1P15O6AfWEQ))
+
+
+## Accessing Parent Data([Document](https://laravel.com/docs/10.x/blade#accessing-parent-data))
+
+
+ ar moddhe @aware somporke bola hoyeche
+
+
+
+## Anonymous Component Paths([Document](https://laravel.com/docs/10.x/blade#anonymous-component-paths))
+
+ ar maddhome amara amader anonymous component ar path define kore dite pari...
+
+
+## Building Layouts ([Document](https://laravel.com/docs/10.x/blade#building-layouts))
+### Layouts Using Components([Document](https://laravel.com/docs/10.x/blade#layouts-using-components))
+
+#### Defining The Layout with Component([Document](https://laravel.com/docs/10.x/blade#defining-the-layout-component))
+
+check routes/web.php
+
+#### Applying The Layout Component([Document](https://laravel.com/docs/10.x/blade#applying-the-layout-component))
+
+check routes/web.php
+
+
+## Layouts Using Template Inheritance([Document](https://laravel.com/docs/10.x/blade#layouts-using-template-inheritance))
+
+
+  ar moddhe akta bishoy ache oi ta holo 
+  
+    
+    @section('sidebar')
+        This is the master sidebar.
+    @show
+
+  ai @show ar maddhome amra oonno page theke ai sidebar section aar moddhe r oo content add korte parbo
+
+  jemon oono page aa giye likhobo
+
+    @section('sidebar')
+       @parent
+ 
+       <p>This is appended to the master sidebar.</p>
+    @endsection
+
+  akhane @parent hocche amader sidebar section a aagetheke je option gulo chilo oi guloke bojhacche and @parent ar pore ami notun akta option add korechi oonnoo page theke ai new add kora option ta sobar niche add hobe karon ami  @parent ke call kore tar niche notun option ta add korechi tai.
+
+
+## Forms ([link](https://laravel.com/docs/10.x/blade#forms))  
+
+
+## Stacks([Document](https://laravel.com/docs/10.x/blade#stacks))
+
+ before going to this link check The @once Directive push() which is present into this READEME.md file
+
+
+ amra oono file theke jokhon amader master file aa kono scripts push korbo @push('scripts') ar maddhome tokhon shei scripts gulo amader @stacks('scripts') oi scripts gulo receive korbe . jodi amra @push() diye scripts push kori tahole oi gulo por por master file ar @stacks('scripts')  store korbe kintu ami jodi chai kono scripts ke @stacks('scripts') ar moddhe thaka script gulor sobar oopore rakhbo tokhon amra @prepend('scripts') aita use korbo. (now you can check Stack Documentan)
+
+
+##  Service Injection([Document](https://laravel.com/docs/10.x/blade#service-injection))
+
+check routes/web.php
+  
+## Rendering Inline Blade Templates([Document](https://laravel.com/docs/10.x/blade#rendering-inline-blade-templates))
+
+Check routes/web.php
+
+
+## Rendering Blade Fragments([Document](https://laravel.com/docs/10.x/blade#rendering-blade-fragments))
+
+
+ @fragment('') aita hocche laravel ar akta freture. ar kaj hocche kono view theke akta nirdisto portion select kora @fragment('') ar maddhome and oi nirdisto protion take show korano ....(Check routes/web.php)
+
+ Check routes/web.php
+
+
+## Extending Blade([Document](https://laravel.com/docs/10.x/blade#extending-blade))
+
+ amra chaile custom directive create korte pari...check the Document.
+
+ 
+## Custom Echo Handlers
+
+
+## Custom If Statements([Document](https://laravel.com/docs/10.x/blade#custom-if-statements))
+
+
+amra @if() blade directive take Customize korte pari...(check the Document).
 ## some Important things
 
 * jodi amra blade template a {{ $name }} aivabe kono variable ar value print kori tahole oita thik vabei shei value take print korbe but jodi amra @{{ $name }} ai vabe likhi tahole r variable ar value print hobe na sora sori aita print hoye jabe {{ $name }} browser a r @ autometically remove hoye jabe browser theke 
@@ -347,3 +559,14 @@ The @class directive conditionally compiles a CSS class string. The directive ac
 * HTML Entity Encoding(i am unable to execute code)([link](https://laravel.com/docs/10.x/blade#html-entity-encoding))
 
 * Conditional Classes & Styles(i have a problem to execute first part of this section) ([link](https://laravel.com/docs/10.x/blade#conditional-classes))
+
+* Accessing Attributes & Slots Within Component Classes ([link](https://laravel.com/docs/10.x/blade#using-attributes-slots-within-component-class))
+
+* Additional Dependencies(i understand the topic but i am unable to execute the code)([link](https://laravel.com/docs/10.x/blade#additional-dependencies))
+
+* Conditionally Merge Classes([link](https://laravel.com/docs/10.x/))
+
+
+* Custom Echo Handlers(i will solve it today)([link](https://laravel.com/docs/10.x/blade#custom-echo-handlers))
+
+ 

@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IfStatementController;
 use App\Http\Controllers\CheckController;
-
-/*
+use Illuminate\Support\Facades\Blade;
+ /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -228,4 +228,83 @@ Route::get('/component',function(){
 
 Route::get('/packageComponent',function(){
     return view('PackageComponent');
+});
+
+
+////////////// Passing Data To Components------------
+//////(concept is same with Components that whay i didn't  execute code)
+//////(check READEME.md)   
+
+
+///////////// Component Methods-------------
+//////////// i have used Component methods in /component route that's why i didn't do that aagain 
+
+
+/////////// Accessing Attributes & Slots Within Component Classes
+
+Route::get('/test8',function(){
+    return view('Test8');
+});
+
+
+////////////// Component Attributes-----------------------------
+///////(check READEME.md)
+
+Route::get('/attributes',function(){
+    return view('Attributes');
+});
+
+
+//////////////// Retrieving & Filtering Attributes---------------
+
+Route::get('/filtering',function(){
+    return view('Filtering');
+});
+
+
+///////////////// Slots-------------------
+////////(check READEME.md)
+
+Route::get('/slots',function(){
+    return view('slots');
+});
+
+///////////// Inline Component Views------------------------------
+///////////(check READEME.md) 
+Route::get('/inline',function(){
+    return view('inline'); 
+});
+
+
+//////////// Defining The Layout with Component
+///////////(check READEME.md)
+///////(for this practice i have created an anonymous component which component comes only with blade file)
+
+Route::get('/component',function(){
+    return view('component');
+});
+
+
+//////////////////// Applying The Layout Component---------------------------
+///////////(for this practice i have created an anonymous component which comes only with blade file)
+
+Route::get('/tasks', function () {
+    $tasks = ['PHP', 'LARAVEL', 'JAVASCRIPT'];
+    return view('tasks', ['tasks' => $tasks]);
+});
+
+/////////////////// Rendering Inline Blade Templates--------------------------------
+
+Route::get('/render',function(){
+
+  return Blade::render('Hello, {{ $name }}', ['name' => 'Julian Bashir']);
+
+}); 
+
+
+////////////////// Rendering Blade Fragments-----------------------------
+
+Route::get('/bladeFragments',function(){
+    
+    return view('bladeFragments')->fragment('dialog'); ////////// akhane ami bladeFragments view file ar moddhe @fragement('dialog') name akta area set korechi and aikhene ami return view('bladeFragments')->fragment('dialog') bole diyechi amar bladeFragments ai view theke fragment('dialog') ai area ta shudhu return korba....joi ami fragment(am moddher nam likhte vul kori tahole oo kono eerror debe na kintu amar oi page ar sob dekhabe )
 });

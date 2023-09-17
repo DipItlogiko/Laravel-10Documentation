@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-   <a href="{{ route('sayHello') }}">say hello</a> 
+    <a href="
+    <?php
+    use App\Http\Controllers\HomeController;
+    //echo action([HomeController::class, 'sayHello'],['name' => 'Jim']);
+    echo action([HomeController::class, 'sayHello']);
+    ?> ">
+    sayHello
+    </a>
 </body>
 </html>

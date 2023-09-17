@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,5 +66,7 @@ Route::get('/secretPage',function(Request $request){
 
 Route::get('/URLS',function(Request $request){
     return view('test');
-}); 
-Route::get('/sayHello', [HomeController::class, 'sayHello'])->name('sayHello');
+});
+ 
+Route::get('/sayHello', [HomeController::class, 'sayHello']);
+Route::get('/index', [BlogController::class, 'index']);

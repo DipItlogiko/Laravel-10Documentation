@@ -23,7 +23,13 @@ amra amader validation error messages gulo customize korte pari ai path a giye  
 
   tahole amra oi path ta peye jabo.     
 
+ akhane publish use korar karon hocche amader lang directory ta bydefault vender ar framework ar moddhe thake jokhon amader proyojon hobe kono directory ar moddher file gulo modify korar tokhon amra verndor theke oi directory take amader project ar moddhe niye ashbo Artisan command ar maddhome jemon ami akhane lang directory take niye ashechi vendor theke amra project ar moddhe.
 
+ jodi amra
+ 
+          php artisan vendor:publish
+
+   ai command ta chalai tahole vendor theke sob directory amader samne chole ashbe and oikhan theke amra jeikono akta directory select kore dile oi directory ta vendor theke amader project ar moddhe chole ashbe          
 
 ## Form Request Validation([Document](https://laravel.com/docs/10.x/validation#form-request-validation))
 

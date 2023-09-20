@@ -48,7 +48,7 @@ oothoba amara
            php artisan vendor:publish
 
 
-    ai command ta chalanor por amader laravel-errors ai tag ta select kore dite pari   
+ ai command ta chalanor por amader laravel-errors ai tag ta select kore dite pari   
 
 
 amader errors directory ta ashbe  resources/views/errors ai path a. amra chaile ai error page gulo customize korte pari nijer moto kore.         

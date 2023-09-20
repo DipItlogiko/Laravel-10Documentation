@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+///////////// HTTP Exceptions--------------------------
+///////////(check READEME.md for more information)
+
+
 Route::get('/', function () {
-    return view('welcome');
+    abort(404); //////// akhane ami abort diye 404 error  ke call korechi jodi amar ai url mane / a kew hit  kore tahole take 404 error ta dekhabe  
 });

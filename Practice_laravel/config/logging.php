@@ -1,6 +1,6 @@
 <?php
 
-use Monolog\Handler\NullHandler;
+use Monolog\Handler\NullHandler;  
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'default' => env('LOG_CHANNEL', 'stack'),
+    'default' => env('LOG_CHANNEL', 'stack'),///// bydefault laravel stack channel use kore.... 
 
     /*
     |--------------------------------------------------------------------------
@@ -57,6 +57,12 @@ return [
             'channels' => ['single'],
             'ignore_exceptions' => false,
         ],
+        ////// akhane ami akta custom log create korechi
+        'customlog' => [ ////// customlog hocche amar key name ami ja khushi dite pari
+            'driver'=>'single',
+            'path' => storage_path('logs/custom.log'), ////// akhane amar akta log file create hobe custom.log name storage/logs ar moddhe
+            'level' => 'info', ////// logger amader 8 ta lavels dei log file a message log korar jonno tar moddhe info akta check (READEME.md)
+        ],
 
         'single' => [
             'driver' => 'single',
@@ -65,7 +71,7 @@ return [
             'replace_placeholders' => true,
         ],
 
-        'daily' => [
+        'daily' => [ /////// jodi amra default ar env('LOG_CHANNEL', 'stack') stack ar jaigai daily diye dei tahole amader log file ar information gulo protidin ar ta protidin log korbe 
             'driver' => 'daily',
             'path' => storage_path('logs/laravel.log'),
             'level' => env('LOG_LEVEL', 'debug'),

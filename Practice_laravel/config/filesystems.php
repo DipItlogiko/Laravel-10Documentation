@@ -30,15 +30,15 @@ return [
 
     'disks' => [
 
-        'local' => [
+        'local' => [ ///// ai disk ar nam local
             'driver' => 'local',
-            'root' => storage_path('app'),
+            'root' => storage_path('app'), //////storage_path mane akhane storage directory take bojhano hocche
             'throw' => false,
         ],
 
-        'public' => [
+        'public' => [ ///// ai disk ar nam public
             'driver' => 'local',
-            'root' => storage_path('app/public'),
+            'root' => storage_path('app/public'),//////storage_path mane akhane storage directory take bojhano hocche
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
             'throw' => false,
@@ -54,6 +54,12 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
+        ],
+        ///////////// Scoped & Read-Only Filesystems
+        's3-videos' => [
+            'driver' => 'scoped',
+            'disk' => 'local',
+            'prefix' => 'storage/app/videos',
         ],
 
     ],

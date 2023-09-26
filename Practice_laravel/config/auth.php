@@ -62,7 +62,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\User::class, //////// akhane bola hoyeche amader User model mane amader users table ar oopor vitti kore amader authentication hobe jokhon kono user login korbe
         ],
 
         // 'users' => [

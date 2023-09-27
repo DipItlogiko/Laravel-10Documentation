@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/test', function(){
+    return  'hello users';
+})->middleware('auth.basic'); /////////auth.basic ai middleware ta bydefault vabe amader laravle application a thake app/Http/kernal.php ar moddhe ...... ai middleware ta amader simple akta authentication ar jonno akta pop up show kore 
+
 Route::get('/', function () {
     return view('welcome');
 });

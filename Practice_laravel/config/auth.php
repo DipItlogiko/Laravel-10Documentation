@@ -59,7 +59,7 @@ return [
     |
     */
 
-    'providers' => [
+    'providers' => [ //////akhane amra r ooooo provider add korte pari jemon admin ..ja khushi and ai provider add korar pore oi provider take oopore guards array ar moddhe set kore dile amra ai gurd ar name ke call kore authentication korte pari...
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class, //////// akhane bola hoyeche amader User model mane amader users table ar oopor vitti kore amader authentication hobe jokhon kono user login korbe

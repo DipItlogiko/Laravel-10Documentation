@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+Use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//////////// Retrieving All Rows From A Table------------
+
+Route::get('/',[TestController::class,'index']);
+
+//////////// Retrieving A Single Row / Column From A Table----------
+
+Route::get('/test',[TestController::class,'test']);
+
+
+/////////// Retrieving A List Of Column Values----------
+
+Route::get('/test2',[TestController::class,'test2']);
+
+
+//////////// Specifying A Select Clause-----------
+
+Route::get('/test3',[TestController::class,'test3']);
+
+/////// Pessimistic Locking---------------
+
+Route::get('/test4',[TestController::class,'test4']);
+
+/////////// Debugging----------------------
+
+Route::get('/debug',[TestController::class,'debug']);
+
+

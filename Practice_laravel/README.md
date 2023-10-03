@@ -52,7 +52,7 @@ jokhon amra laravel ar sahajje database ar table ar moddhe kono  data rakhte cha
    amader ai UserSeeder name file ta create hobe database/seeders directory ar moddhe.       
 
 
-   check the belows to video you will clear:
+   check the belows two videos you will clear:
 
    * [Tutorial-1](https://www.youtube.com/watch?v=-Ip8Q402Q2w)
 

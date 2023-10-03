@@ -60,4 +60,4 @@ jokhon amra laravel ar sahajje database ar table ar moddhe kono  data rakhte cha
 
    * [Tutorial-2](https://www.youtube.com/watch?v=Y8crm7oULds)
  
-   Ororer video ta dekhar por ai video ta dekha uchit.
+   Oporer video ta dekhar por ai video ta dekha uchit.

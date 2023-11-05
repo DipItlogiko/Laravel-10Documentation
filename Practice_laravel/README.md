@@ -43,7 +43,10 @@ amra ai 2ta freture ar maddhome amader database ar table aa jei data gulo jabe a
 
 ## Custom Casts([Document](https://laravel.com/docs/10.x/eloquent-mutators#custom-casts))(14:29[Tutorial](https://www.youtube.com/watch?v=rie3Ot7C1Ek))
 
-ai video te bola hoyeche je Custom casts create korar kono artisan command nei karon oi ta laravel ar loder version chilo kintu jehetu amra Laravel-10 use korchi amader ai document ar moddhe artisan command ta dewa ache....
+ai video te bola hoyeche je Custom casts create korar kono artisan command nei karon oi ta laravel ar older version chilo kintu jehetu amra Laravel-10 use korchi amader ai document ar moddhe artisan command ta dewa ache....
+
+
+
 
 
 

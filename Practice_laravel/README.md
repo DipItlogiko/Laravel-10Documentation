@@ -11,7 +11,13 @@
 
  * amra jodi Laravel Breeze install kore nei tahole Laravel Breeze amader jonno akta authentication system create kore debe....and ai authentication system ta amader User model ba users table ar oopor vitti kore hobe....go config/auth.php
 
- * Laravel ar kichu packages ache je gulo amader laravel application  aaaa install korle  authentication system create kore dei  jemon:
+ * Laravel ar kichu packages ache je gulo amader laravel application  aaaa install korle api based  authentication system create kore dei  jemon:
+   
+   * Sanctum
+   * Passport
+
+
+ * Laravel ar kichu packages ache je gulo amader laravel application  aaaa install korle web based  authentication system create kore dei  jemon:
 
    * Laravel Breeze.
 

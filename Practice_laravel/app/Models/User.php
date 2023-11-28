@@ -42,4 +42,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    //--One To One Relationship--//
+    public function phon()
+    {
+        return $this->hasOne(Phon::class);        // hasOne() method mane hocche amader aikhane One To One relationship kora hoyeche
+    }
+   
+    //--One To Many Relationship--//
+    public function posts()  /// akhane amader User Model ar moddhe ami bole dilam je amader Post nam aaa je Model ta ache oi Model ar sathe akta relation korte amader User Model  mane User Model ta database ar jei table take represent kore oi table ar sathe Post Model ta database ar jei table take represent kore  oi table ar akta relation hobe and jehetu ami User Model ar moddhe hasMany diye Post::class diyechi tai amader  1 jon user chaile akhane oonek gulo post korte parbe muloto ami akhane One To Many Relationship korechi hasMany() method ar maddhome amader 1 jon user oonek gulo post korte parbe
+    {
+        return $this->hasMany(Post::class);
+    }
+
+     
 }
